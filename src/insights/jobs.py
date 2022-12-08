@@ -10,7 +10,7 @@ def read(path: str) -> List[Dict]:
 
 
 def get_unique_job_types(path: str) -> List[str]:
-    return set(jobs["job_type"] for jobs in read(path))
+    return {jobs["job_type"] for jobs in read(path)}
 
 
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:

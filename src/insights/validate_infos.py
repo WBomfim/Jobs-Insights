@@ -8,12 +8,12 @@ def validate_job_salaries_info(job: Dict) -> None:
     min_salary, max_salary = job["min_salary"], job["max_salary"]
 
     if (
-        not type(max_salary) == int or not str(max_salary).isnumeric()
+        not type(max_salary) == int and not str(max_salary).isnumeric()
     ):
         raise ValueError("max_salary must be numeric")
 
     if (
-        not type(min_salary) == int or not str(min_salary).isnumeric()
+        not type(min_salary) == int and not str(min_salary).isnumeric()
     ):
         raise ValueError("min_salary must be numeric")
 
